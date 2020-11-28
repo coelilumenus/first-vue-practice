@@ -5,8 +5,10 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'materialize-css/dist/js/materialize.min'
+import messagePlugin from '@/utils/message.plugin'
 
 Vue.config.productionTip = false
+Vue.use(messagePlugin)
 Vue.use(Vuelidate)
 Vue.prototype.$filters = {
   dateFilter (value, format = 'datetime') {
