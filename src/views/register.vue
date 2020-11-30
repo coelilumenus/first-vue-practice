@@ -44,6 +44,7 @@
 
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
+import messages from '@/utils/messages'
 
 export default {
   name: 'register',
@@ -60,7 +61,7 @@ export default {
     isAgree: { checked: v => v }
   },
   methods: {
-    submitHandler () {
+    async submitHandler () {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
@@ -70,7 +71,10 @@ export default {
         password: this.password,
         name: this.name
       }
-      this.$router.push('/')
+      try {
+        await this.$store.dispatch('register', formData)
+        this.$router.push('/')
+      } catch (e) {}
     }
   }
 }
