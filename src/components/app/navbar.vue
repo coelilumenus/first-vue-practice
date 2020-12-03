@@ -5,7 +5,7 @@
         <a href="#" @click.prevent="$emit('click')">
           <i class="material-icons black-text">dehaze</i>
         </a>
-        <span class="black-text">{{$filters.dateFilter(date)}}</span>
+        <span class="black-text">{{date | dateFilter('datetime')}}</span>
       </div>
 
       <ul class="right hide-on-small-and-down">
@@ -64,7 +64,7 @@ export default {
       this.date = new Date()
     }, 1000)
     this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-      constrainWidth: true
+      constrainWidth: false
     })
   },
   beforeDestroy () {

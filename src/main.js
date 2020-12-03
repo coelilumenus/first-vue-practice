@@ -9,26 +9,16 @@ import messagePlugin from '@/utils/message.plugin'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
+import loader from '@/components/app/loader'
+import currencyFilter from '@/filters/currency.filter'
+import dateFilter from '@/filters/date.filter'
 
 Vue.config.productionTip = false
 Vue.use(messagePlugin)
 Vue.use(Vuelidate)
-Vue.prototype.$filters = {
-  dateFilter (value, format = 'datetime') {
-    const options = {}
-    if (format.includes('date')) {
-      options.day = '2-digit'
-      options.month = 'long'
-      options.year = 'numeric'
-    }
-    if (format.includes('time')) {
-      options.hour = '2-digit'
-      options.minute = '2-digit'
-      options.second = '2-digit'
-    }
-    return new Intl.DateTimeFormat('ru-RU', options).format(new Date(value))
-  }
-}
+Vue.component('loader', loader)
+Vue.filter('currency', currencyFilter)
+Vue.filter('dateFilter', dateFilter)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyB0mbysDWGMRLxcNkc5m2-PuYkloeQ8cvE',
