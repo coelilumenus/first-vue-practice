@@ -12,7 +12,7 @@
     </thead>
 
     <tbody>
-      <tr v-for="(record, idx) of recordsReverse" :key="record.id">
+      <tr v-for="(record, idx) of records" :key="record.id">
         <td>{{idx + 1}}</td>
         <td>{{record.amount | currency('RUB')}}</td>
         <td>{{record.date | dateFilter('datetime')}}</td>
@@ -37,9 +37,6 @@ export default {
       required: true,
       type: Array
     }
-  },
-  computed: {
-    recordsReverse () { return this.records.slice().reverse() }
   }
 }
 </script>

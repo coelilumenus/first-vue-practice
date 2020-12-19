@@ -3,7 +3,7 @@
     <loader v-if="loading" />
     <div v-else-if="record">
       <div class="breadcrumb-wrap">
-        <router-link to="/history" class="breadcrumb">История</router-link>
+        <router-link to="/history" class="breadcrumb">{{'Menu_History' | localize}}</router-link>
         <a @click.prevent class="breadcrumb"> {{record.type === 'income' ? 'Доход' : 'Расход'}} </a>
       </div>
       <div class="row">
@@ -13,16 +13,16 @@
             'green': record.type === 'income'
           }">
             <div class="card-content white-text">
-              <p>Описание: {{record.description}}</p>
-              <p>Сумма: {{record.amount | currency}}</p>
-              <p>Категория: {{record.categoryName}}</p>
+              <p>{{'description' | localize}}: {{record.description}}</p>
+              <p>{{'amount' | localize}}: {{record.amount | currency}}</p>
+              <p>{{'category' | localize}}: {{record.categoryName}}</p>
               <small>{{record.date | dateFilter('datetime')}}</small>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <p class="center" v-else>Данной записи не существует</p>
+    <p class="center" v-else>{{'emptyRecord' | localize}}</p>
   </div>
 </template>
 

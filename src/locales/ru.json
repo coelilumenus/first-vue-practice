@@ -1,0 +1,20 @@
+{
+  "profileTitle": "Профиль",
+  "Menu_Bill": "Счёт",
+  "Menu_History": "История",
+  "Menu_Planning": "Планирование",
+  "Menu_NewRecord": "Новая запись",
+  "Menu_Categories": "Категории",
+  "emptyCategories": "Категорий пока нет",
+  "income": "Доход",
+  "outcome": "Расход",
+  "description": "Описание",
+  "amount": "Сумма",
+  "category": "Категория",
+  "emptyRecord": "Данной записи не существует",
+  "emptyRecords": "Записей пока нет.",
+  "letMakeNewRecord": "Создать запись",
+  "prev": "Назад",
+  "next": "Вперёд",
+  "outcomeByCategory": "Расходы по категориям:"
+}
