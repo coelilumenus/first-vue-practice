@@ -26,7 +26,14 @@
 import loader from '../components/app/loader.vue'
 import { mapGetters } from 'vuex'
 import currencyFilter from '@/filters/currency.filter'
+import localize from '@/filters/localize.filter'
+
 export default {
+  metaInfo () {
+    return {
+      title: this.$title('Menu_Planning')
+    }
+  },
   components: { loader },
   name: 'planning',
   data: () => ({
@@ -55,7 +62,7 @@ export default {
           ? 'yellow'
           : 'red'
       const tooltipValue = cat.limit - spend
-      const tooltip = `${tooltipValue < 0 ? 'Превышение на' : 'Осталось'} ${currencyFilter(Math.abs(tooltipValue))}`
+      const tooltip = `${tooltipValue < 0 ? localize('excess') : localize('available')} ${currencyFilter(Math.abs(tooltipValue))}`
       return {
         ...cat,
         progressPercent,

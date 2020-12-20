@@ -28,7 +28,13 @@
 
 <script>
 import loader from '../components/app/loader.vue'
+
 export default {
+  metaInfo () {
+    return {
+      title: this.$title('detailRecord')
+    }
+  },
   components: { loader },
   name: 'detail-record',
   data: () => ({

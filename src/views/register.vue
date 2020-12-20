@@ -29,7 +29,7 @@
     <div class="card-action">
       <div>
         <button class="btn waves-effect waves-light auth-submit" type="submit">
-          {{'registation' | localize}}
+          {{'registration' | localize}}
           <i class="material-icons right">send</i>
         </button>
       </div>
@@ -47,6 +47,11 @@ import { email, required, minLength } from 'vuelidate/lib/validators'
 import messages from '@/utils/messages'
 
 export default {
+  metaInfo () {
+    return {
+      title: this.$title('registration')
+    }
+  },
   name: 'register',
   data: () => ({
     email: '',

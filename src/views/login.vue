@@ -25,7 +25,7 @@
 
       <p class="center">
         {{'noAccount' | localize}}
-        <router-link to="/register">{{'registation' | localize}}</router-link>
+        <router-link to="/register">{{'registration' | localize}}</router-link>
       </p>
     </div>
   </form>
@@ -36,6 +36,11 @@ import { email, required, minLength } from 'vuelidate/lib/validators'
 import messages from '@/utils/messages'
 
 export default {
+  metaInfo () {
+    return {
+      title: this.$title('login')
+    }
+  },
   name: 'login',
   data: () => ({
     email: '',

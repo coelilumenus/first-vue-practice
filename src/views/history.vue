@@ -8,7 +8,7 @@
       <canvas ref="canvas"></canvas>
     </div>
     <loader v-if="loading" />
-    <p class="center" v-else-if="!records.length">{{'emptyRecrods' | localize}} <router-link to="/record">{{'letMakeNewRecord' | localize}}</router-link></p>
+    <p class="center" v-else-if="!records.length">{{'emptyRecords' | localize}} <router-link to="/record">{{'letMakeNewRecord' | localize}}</router-link></p>
     <section v-else>
       <historyTable :records="items" />
     <paginate
@@ -31,6 +31,11 @@ import paginationMixin from '@/mixins/pagination.mixin'
 import { Pie } from 'vue-chartjs'
 
 export default {
+  metaInfo () {
+    return {
+      title: this.$title('Menu_History')
+    }
+  },
   name: 'history',
   extends: Pie,
   mixins: [paginationMixin],

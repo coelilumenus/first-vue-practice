@@ -50,5 +50,14 @@
   "currencies": "Курс валют",
   "currency": "Валюта",
   "rate": "Курс",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "excess": "Превышение на",
+  "available": "Доступно",
+  "detailRecord": "Подробности",
+  "login": "Вход",
+  "logoutMessage": "Вы вышли из системы",
+  "userNotFoundMessage": "Пользователь с данным Email не найден",
+  "wrongPasswordMessage": "Введён неверный пароль",
+  "emailAlreadyInUseMessage": "Пользователь с данным Email уже существует",
+  "loginMessage": "Сперва нужно войти в систему"
 }
