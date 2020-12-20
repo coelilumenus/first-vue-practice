@@ -7,11 +7,11 @@
     <form class="form" @submit.prevent="submitHandler">
       <div class="input-field">
         <input id="description" type="text" v-model="name" :class="{ invalid: $v.name.$dirty && !$v.name.required }">
-        <label for="description">Имя</label>
+        <label for="description">{{'name' | localize}}</label>
         <span
         class="helper-text invalid"
         v-if="$v.name.$dirty && !$v.name.required"
-        >Введите имя</span>
+        >{{'enterName' | localize}}</span>
       </div>
       <div class="switch">
         <label>
@@ -23,7 +23,7 @@
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        Обновить
+        {{'update' | localize}}
         <i class="material-icons right">send</i>
       </button>
     </form>
